@@ -2,7 +2,7 @@ class ChurchApp {
   constructor() {
     this.config = {
       youtube: {
-        apiKey: "AIzaSyALhMyuq20yoisXXp8sf7rjvUGyHKC7mGg",
+        apiKey: "Colocar clave de API de YouTube aquí",
         channelId: "UCfhSTnqLb6vFO28eNm_n0qw",
         apiBase: "https://www.googleapis.com/youtube/v3",
       },
