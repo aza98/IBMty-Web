@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="es" data-bs-theme="light">
+<head>
+    <!-- Metadatos básicos -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Inicio | Iglesia Bautista de Monterrey">
+    
+    <!-- Configuración de tema claro/oscuro -->
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#121212" media="(prefers-color-scheme: dark)">
+    
+    <!-- Precarga de recursos críticos para mejorar rendimiento -->
+    <link rel="preload" href="assets/images/logos/IBMty_Logo_Desktop.png" as="image">
+    <link rel="preload" href="assets/images/logos/IBMty_Logo_Mobile.png" as="image">
+    
+    <!-- Favicon e ícono para dispositivos Apple -->
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/logos/IBMty_Icon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/logos/IBMty_Icon.png">
+    
+    <title>Iglesia Bautista de Monterrey</title>
+    
+    <!-- Hojas de estilo externas -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    
+    <!-- Hojas de estilo personalizadas -->
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/footer.css">
+</head>
+<body>
+    <!-- BARRA DE NAVEGACIÓN -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <!-- Botón de cambio de tema (versión móvil) -->
+            <button type="button" class="btn theme-toggle mobile-theme-toggle d-lg-none" onclick="toggleTheme()">
+                <i class="fas fa-sun" id="mobile-theme-icon"></i>
+            </button>
+            
+            <!-- Logo para escritorio -->
+            <a class="navbar-brand" href="index.html">
+                <img src="assets/images/logos/IBMty_Logo_Desktop.png" alt="Logo" class="img-fluid">
+            </a>
+            
+            <!-- Logo para móvil -->
+            <a class="navbar-brand mobile-brand" href="index.html">
+                <img src="assets/images/logos/IBMty_Logo_Mobile.png" alt="Logo" class="img-fluid">
+            </a>
+            
+            <!-- Botón hamburguesa para menú móvil -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <!-- Menú de navegación -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <!-- Página activa marcada con clase 'active' -->
+                        <a class="nav-link active" href="index.html"><i class="fas fa-home"></i>Inicio </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="nosotros.html"><i class="fas fa-users"></i>Nosotros </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="ministerios.html"><i class="fas fa-church"></i>Ministerios </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="salvacion.html"><i class="fas fa-cross"></i>Salvación </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="donativo.html"><i class="fas fa-donate"></i>Donativo </a>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- Botón de cambio de tema (versión escritorio) -->
+            <button type="button" class="btn theme-toggle d-none d-lg-flex" onclick="toggleTheme()">
+                <i class="fas fa-sun" id="desktop-theme-icon"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main id="main-content">
+        <!-- SECCIÓN HERO -->
+        <section class="hero-section position-relative overflow-hidden d-flex flex-column justify-content-center" 
+                 data-bs-theme="dark" 
+                 aria-label="Sección principal de bienvenida" 
+                 style="height: 92vh; min-height: 500px; max-height: 92vh;">
+            <!-- Imagen de fondo con soporte responsive -->
+            <div class="position-absolute top-0 start-0 w-100 h-100" style="z-index: -1;">
+                <picture>
+                    <source media="(max-width: 576px)" srcset="assets/images/Extras/Bienvenida_mobile.jpg">
+                    <source media="(max-width: 992px)" srcset="assets/images/Extras/Bienvenida2-tablet.png">
+                    <img src="assets/images/Extras/Bienvenida_descktop.png" 
+                         alt="Comunidad de la iglesia reunida en celebración" 
+                         class="w-100 h-100 object-fit-cover" 
+                         loading="eager">
+                </picture>
+                <!-- Overlay oscuro para mejorar legibilidad del texto -->
+                <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark" 
+                     style="opacity: 0.6;" 
+                     aria-hidden="true"></div>
+            </div>
+            
+            <!-- Contenido principal del hero -->
+            <div class="container position-relative" style="z-index: 1;">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-lg-10 col-xl-8">
+                        <!-- Título y subtítulo con animaciones -->
+                        <div class="text-center text-white mb-5">
+                            <h1 class="display-2 display-md-1 fw-bold mb-4 lh-1" 
+                                data-aos="fade-up" 
+                                data-aos-delay="200">
+                                Bienvenido a la <span class="text-info">Iglesia Bautista de Monterrey</span>
+                            </h1>
+                            <p class="fs-4 fs-md-3 mb-0 opacity-90 mx-auto" 
+                               style="max-width: 600px;" 
+                               data-aos="fade-up" 
+                               data-aos-delay="400">
+                                ¡Una iglesia que piensa en ti!
+                            </p>
+                        </div>
+                        
+                        <!-- Botones de llamada a la acción -->
+                        <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center align-items-center" 
+                             data-aos="fade-up" 
+                             data-aos-delay="600">
+                            <a href="ministerios.html"
+                               class="btn btn-primary btn-lg px-5 py-3 rounded-pill fw-semibold shadow-lg position-relative overflow-hidden"
+                               style="min-width: 200px; transition: all 0.3s ease;" 
+                               aria-label="Únete a nuestros ministerios">
+                                <i class="fas fa-hands-praying me-2"></i><span>Únete a Nosotros</span>
+                            </a>
+                            <a href="nosotros.html"
+                               class="btn btn-outline-light btn-lg px-5 py-3 rounded-pill fw-semibold border-2 position-relative"
+                               style="min-width: 200px; transition: all 0.3s ease; backdrop-filter: blur(10px);"
+                               aria-label="Conoce más sobre nuestra iglesia">
+                                <i class="fas fa-heart me-2"></i><span>Conócenos Más</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Indicador de scroll hacia abajo -->
+            <div class="position-absolute bottom-0 start-50 translate-middle-x mb-3" 
+                 style="z-index: 1;" 
+                 data-aos="fade-up" 
+                 data-aos-delay="800">
+                <a href="#transmision" 
+                   class="text-white text-decoration-none d-flex flex-column align-items-center animate__animated animate__bounce animate__infinite animate__slow" 
+                   aria-label="Ir a la sección de transmisión en vivo">
+                    <div class="small mb-2 opacity-75">Continuar</div>
+                    <i class="fas fa-chevron-down fa-lg"></i>
+                </a>
+            </div>
+            
+            <!-- Elementos decorativos flotantes -->
+            <div class="position-absolute top-0 start-0 w-100 h-100 overflow-hidden" 
+                 style="z-index: 0; pointer-events: none;">
+                <div class="position-absolute" 
+                     style="top: 10%; left: 10%; width: 100px; height: 100px; background: rgba(255, 255, 255, 0.05); border-radius: 50%; animation: float 6s ease-in-out infinite;"></div>
+                <div class="position-absolute" 
+                     style="top: 60%; right: 15%; width: 150px; height: 150px; background: rgba(255, 255, 255, 0.03); border-radius: 50%; animation: float 8s ease-in-out infinite reverse;"></div>
+                <div class="position-absolute" 
+                     style="bottom: 20%; left: 20%; width: 80px; height: 80px; background: rgba(255, 255, 255, 0.04); border-radius: 50%; animation: float 7s ease-in-out infinite;"></div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN DE TRANSMISIÓN EN VIVO -->
+        <section id="transmision" class="py-5 py-lg-6 bg-body-secondary" aria-label="Sección de transmisión en vivo">
+            <div class="container-fluid px-4">
+                <!-- Encabezado de sección -->
+                <div class="row justify-content-center mb-5">
+                    <div class="col-12 col-md-10 col-lg-8 text-center">
+                        <h2 class="display-5 fw-bold mb-3" data-aos="fade-up" data-aos-duration="800">
+                            <i class="fas fa-broadcast-tower text-danger me-3"></i>Transmisión en Vivo
+                        </h2>
+                        <p class="lead text-body-secondary" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">
+                            Únete a nuestro servicio en tiempo real desde cualquier lugar del mundo.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Contenido de transmisión -->
+                <div class="row justify-content-center">
+                    <div class="col-12 col-xl-11">
+                        <div class="row g-4">
+                            <!-- Columna principal con video -->
+                            <div class="col-12 col-lg-8">
+                                <article class="card border-0 shadow-sm h-100" data-aos="fade-right" data-aos-duration="800">
+                                    <!-- Reproductor de YouTube embebido -->
+                                    <div class="ratio ratio-16x9">
+                                        <iframe
+                                            id="youtube-live-embed"
+                                            src="https://www.youtube.com/embed/_FJgqwnwhqE"
+                                            title="Transmisión en vivo - Iglesia Bautista de Monterrey"
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                            allowfullscreen
+                                            class="rounded-top"
+                                            loading="lazy"></iframe>
+                                    </div>
+                                    
+                                    <!-- Controles y estadísticas del video -->
+                                    <div class="card-body p-4">
+                                        <div class="d-flex align-items-center justify-content-between mb-3 flex-wrap gap-2">
+                                            <div class="d-flex align-items-center">
+                                                <span class="badge bg-danger px-3 py-2 animate__animated animate__pulse animate__infinite" 
+                                                      id="liveStatusBadge" 
+                                                      aria-live="polite">
+                                                    <i class="fas fa-circle me-2"></i>EN VIVO 
+                                                </span>
+                                            </div>
+                                            <div class="text-body-secondary small">
+                                                <i class="fas fa-eye me-2"></i><span id="viewerCount" aria-live="polite">--</span>espectadores
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- Botones de acción -->
+                                        <div class="d-flex gap-2 flex-wrap">
+                                            <a href="https://www.youtube.com/channel/UCfhSTnqLb6vFO28eNm_n0qw"
+                                               target="_blank"
+                                               rel="noopener noreferrer"
+                                               class="btn btn-danger flex-fill flex-sm-grow-0"
+                                               aria-label="Suscribirse a nuestro canal de YouTube">
+                                                <i class="fab fa-youtube me-2"></i>Suscribirse
+                                            </a>
+                                            <button class="btn btn-outline-primary flex-fill flex-sm-grow-0" 
+                                                    onclick="shareVideo()" 
+                                                    aria-label="Compartir transmisión en vivo">
+                                                <i class="fas fa-share-alt me-2"></i>Compartir
+                                            </button>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                            
+                            <!-- Columna lateral con información adicional -->
+                            <div class="col-12 col-lg-4">
+                                <aside class="card h-100 border-0 shadow-sm" 
+                                       data-aos="fade-left" 
+                                       data-aos-duration="800" 
+                                       aria-label="Información del servicio">
+                                    <div class="card-body p-4">
+                                        <h3 class="h5 fw-bold mb-4 text-center">Información del Servicio</h3>
+                                        
+                                        <!-- Grid de información con iconos -->
+                                        <div class="row g-3 mb-4">
+                                            <!-- Horarios -->
+                                            <div class="col-6">
+                                                <div class="text-center p-3 bg-body-tertiary rounded-3 h-100" 
+                                                     data-aos="zoom-in" 
+                                                     data-aos-delay="100">
+                                                    <i class="fas fa-clock text-primary fs-3 mb-2 d-block" aria-hidden="true"></i>
+                                                    <h4 class="h6 fw-semibold mb-1">Horarios</h4>
+                                                    <small class="text-body-secondary">Dom 11:00 AM</small>
+                                                </div>
+                                            </div>
+                                            
+                                            <!-- Notificaciones -->
+                                            <div class="col-6">
+                                                <div class="text-center p-3 bg-body-tertiary rounded-3 h-100" 
+                                                     data-aos="zoom-in" 
+                                                     data-aos-delay="200">
+                                                    <i class="fas fa-bell text-warning fs-3 mb-2 d-block" aria-hidden="true"></i>
+                                                    <h6 class="mb-1">Notificaciones</h6>
+                                                    <small class="text-body-secondary">Activar alertas</small>
+                                                </div>
+                                            </div>
+                                            
+                                            <!-- Comunidad -->
+                                            <div class="col-6">
+                                                <div class="text-center p-3 bg-body-tertiary rounded-3 h-100" 
+                                                     data-aos="zoom-in" 
+                                                     data-aos-delay="300">
+                                                    <i class="fas fa-users text-success fs-3 mb-2 d-block" aria-hidden="true"></i>
+                                                    <h4 class="h6 fw-semibold mb-1">Comunidad</h4>
+                                                    <small class="text-body-secondary">Para todos</small>
+                                                </div>
+                                            </div>
+                                            
+                                            <!-- Ubicación -->
+                                            <div class="col-6">
+                                                <div class="text-center p-3 bg-body-tertiary rounded-3 h-100" 
+                                                     data-aos="zoom-in" 
+                                                     data-aos-delay="400">
+                                                    <i class="fas fa-map-marker-alt text-info fs-3 mb-2 d-block" aria-hidden="true"></i>
+                                                    <h4 class="h6 fw-semibold mb-1">Ubicación</h4>
+                                                    <small class="text-body-secondary">Monterrey, NL</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- Botón de notificaciones -->
+                                        <div class="d-grid" data-aos="fade-up" data-aos-delay="500">
+                                            <button class="btn btn-outline-warning" 
+                                                    onclick="enableNotifications()" 
+                                                    aria-label="Activar notificaciones de transmisión">
+                                                <i class="fas fa-bell me-2"></i>Activar notificaciones
+                                            </button>
+                                        </div>
+                                    </div>
+                                </aside>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN DE PRÓXIMOS EVENTOS -->
+        <section id="eventos" class="py-5 py-lg-6" aria-label="Sección de próximos eventos">
+            <div class="container-fluid px-4">
+                <!-- Encabezado de sección -->
+                <div class="row justify-content-center mb-5">
+                    <div class="col-12 col-md-10 col-lg-8 text-center">
+                        <h2 class="display-5 fw-bold mb-3" data-aos="fade-up" data-aos-duration="800">
+                            <i class="fas fa-calendar-check text-primary me-3"></i>Próximos Eventos
+                        </h2>
+                        <p class="lead text-body-secondary" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">
+                            Mantente al día con todas nuestras actividades y celebraciones especiales.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Grid de tarjetas de eventos -->
+                <div class="row justify-content-center">
+                    <div class="col-12 col-xl-10">
+                        <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4" id="eventsContainer">
+                            <!-- Evento 1: Escuelitas de Verano -->
+                            <div class="col">
+                                <article class="card h-100 border-0 shadow-sm" 
+                                         data-aos="fade-up" 
+                                         data-aos-delay="100" 
+                                         data-aos-duration="800">
+                                    <div class="ratio ratio-16x9">
+                                        <img src="assets/images/Extras/Evento1.png" 
+                                             class="card-img-top object-fit-cover" 
+                                             alt="Celebración del Día del Padre en la iglesia" 
+                                             loading="lazy">
+                                    </div>
+                                    <div class="card-body d-flex flex-column p-4">
+                                        <h3 class="card-title h5 fw-bold mb-2">Escuelitas de Verano</h3>
+                                        <p class="card-text text-body-secondary mb-3">
+                                            Celebración especial honrando a todos los padres de nuestra comunidad con actividades familiares.
+                                        </p>
+                                        <div class="mt-auto">
+                                            <!-- Detalles del evento -->
+                                            <dl class="row small mb-3">
+                                                <dt class="col-2 text-primary"><i class="fas fa-calendar-alt" aria-hidden="true"></i></dt>
+                                                <dd class="col-10 mb-2">Del 21 al 25 de junio de 2025</dd>
+                                                <dt class="col-2 text-success"><i class="fas fa-clock" aria-hidden="true"></i></dt>
+                                                <dd class="col-10 mb-2">6:00 PM</dd>
+                                                <dt class="col-2 text-warning"><i class="fas fa-map-marker-alt" aria-hidden="true"></i></dt>
+                                                <dd class="col-10 mb-0">Auditorio Principal</dd>
+                                            </dl>
+                                            <div class="d-grid">
+                                                <a href="events/Evento1.ics" 
+                                                   class="btn btn-danger" 
+                                                   aria-label="Añadir Día del Padre al calendario" 
+                                                   target="_blank" 
+                                                   rel="noopener">
+                                                    <i class="fa-regular fa-calendar me-2"></i>Agregar al calendario
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                            
+                            <!-- Evento 2: Día de Campo en familia -->
+                            <div class="col">
+                                <article class="card h-100 border-0 shadow-sm" 
+                                         data-aos="fade-up" 
+                                         data-aos-delay="200" 
+                                         data-aos-duration="800">
+                                    <div class="ratio ratio-16x9">
+                                        <img src="assets/images/Extras/Evento2.png" 
+                                             class="card-img-top object-fit-cover" 
+                                             alt="Celebración del Día de la Independencia con actividades culturales" 
+                                             loading="lazy">
+                                    </div>
+                                    <div class="card-body d-flex flex-column p-4">
+                                        <h3 class="card-title h5 fw-bold mb-2">Día de Campo en familia</h3>
+                                        <p class="card-text text-body-secondary mb-3">
+                                            Celebración patria con actividades culturales, música tradicional y comida típica mexicana.
+                                        </p>
+                                        <div class="mt-auto">
+                                            <!-- Detalles del evento -->
+                                            <dl class="row small mb-3">
+                                                <dt class="col-2 text-primary"><i class="fas fa-calendar-alt" aria-hidden="true"></i></dt>
+                                                <dd class="col-10 mb-2">23 de agosto de 2025</dd>
+                                                <dt class="col-2 text-success"><i class="fas fa-clock" aria-hidden="true"></i></dt>
+                                                <dd class="col-10 mb-2">5:00 PM</dd>
+                                                <dt class="col-2 text-warning"><i class="fas fa-map-marker-alt" aria-hidden="true"></i></dt>
+                                                <dd class="col-10 mb-0">Local 41</dd>
+                                            </dl>
+                                            <div class="d-grid">
+                                                <a href="events/Evento2.ics" 
+                                                   class="btn btn-danger" 
+                                                   aria-label="Añadir Día de la Independencia al calendario" 
+                                                   target="_blank" 
+                                                   rel="noopener">
+                                                    <i class="fa-regular fa-calendar me-2"></i>Agregar al calendario
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                            
+                            <!-- Evento 3: Fiesta Mexicana/Aniversario Iglesia -->
+                            <div class="col">
+                                <article class="card h-100 border-0 shadow-sm" 
+                                         data-aos="fade-up" 
+                                         data-aos-delay="300" 
+                                         data-aos-duration="800">
+                                    <div class="ratio ratio-16x9">
+                                        <img src="assets/images/Extras/Evento3.png" 
+                                             class="card-img-top object-fit-cover" 
+                                             alt="Conferencia CIMA 2025 - Impulso Misionero" 
+                                             loading="lazy">
+                                    </div>
+                                    <div class="card-body d-flex flex-column p-4">
+                                        <h3 class="card-title h5 fw-bold mb-2">Fiesta Mexicana/Aniversario Iglesia</h3>
+                                        <p class="card-text text-body-secondary mb-3">
+                                            Conferencia de Impulso Misionero. Un encuentro nacional de fe, crecimiento espiritual y misiones.
+                                        </p>
+                                        <div class="mt-auto">
+                                            <!-- Detalles del evento -->
+                                            <dl class="row small mb-3">
+                                                <dt class="col-2 text-primary"><i class="fas fa-calendar-alt" aria-hidden="true"></i></dt>
+                                                <dd class="col-10 mb-2">20 de septiembre de 2025</dd>
+                                                <dt class="col-2 text-success"><i class="fas fa-clock" aria-hidden="true"></i></dt>
+                                                <dd class="col-10 mb-2">9:00 AM</dd>
+                                                <dt class="col-2 text-info"><i class="fas fa-globe" aria-hidden="true"></i></dt>
+                                                <dd class="col-10 mb-0">Evento nacional - CDMX</dd>
+                                            </dl>
+                                            <div class="d-grid">
+                                                <a href="events/Evento3.ics" 
+                                                   class="btn btn-danger" 
+                                                   aria-label="Añadir CIMA 2025 al calendario" 
+                                                   target="_blank" 
+                                                   rel="noopener">
+                                                    <i class="fa-regular fa-calendar me-2"></i>Agregar al calendario
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                            
+                            <!-- Evento 4: Conferencia Siembra -->
+                            <div class="col">
+                                <article class="card h-100 border-0 shadow-sm" 
+                                         data-aos="fade-up" 
+                                         data-aos-delay="300" 
+                                         data-aos-duration="800">
+                                    <div class="ratio ratio-16x9">
+                                        <img src="assets/images/Extras/Evento3.png" 
+                                             class="card-img-top object-fit-cover" 
+                                             alt="Conferencia CIMA 2025 - Impulso Misionero" 
+                                             loading="lazy">
+                                    </div>
+                                    <div class="card-body d-flex flex-column p-4">
+                                        <h3 class="card-title h5 fw-bold mb-2">Conferencia Siembra</h3>
+                                        <p class="card-text text-body-secondary mb-3">
+                                            Conferencia de Impulso Misionero. Un encuentro nacional de fe, crecimiento espiritual y misiones.
+                                        </p>
+                                        <div class="mt-auto">
+                                            <!-- Detalles del evento -->
+                                            <dl class="row small mb-3">
+                                                <dt class="col-2 text-primary"><i class="fas fa-calendar-alt" aria-hidden="true"></i></dt>
+                                                <dd class="col-10 mb-2">10 al 12 de octubre de 2025</dd>
+                                                <dt class="col-2 text-success"><i class="fas fa-clock" aria-hidden="true"></i></dt>
+                                                <dd class="col-10 mb-2">9:00 AM</dd>
+                                                <dt class="col-2 text-info"><i class="fas fa-globe" aria-hidden="true"></i></dt>
+                                                <dd class="col-10 mb-0">Evento nacional - CDMX</dd>
+                                            </dl>
+                                            <div class="d-grid">
+                                                <a href="events/Evento3.ics" 
+                                                   class="btn btn-danger" 
+                                                   aria-label="Añadir CIMA 2025 al calendario" 
+                                                   target="_blank" 
+                                                   rel="noopener">
+                                                    <i class="fa-regular fa-calendar me-2"></i>Agregar al calendario
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                            
+                            <!-- Evento 5: CIMA 2025 -->
+                            <div class="col">
+                                <article class="card h-100 border-0 shadow-sm" 
+                                         data-aos="fade-up" 
+                                         data-aos-delay="300" 
+                                         data-aos-duration="800">
+                                    <div class="ratio ratio-16x9">
+                                        <img src="assets/images/Extras/Evento3.png" 
+                                             class="card-img-top object-fit-cover" 
+                                             alt="Conferencia CIMA 2025 - Impulso Misionero" 
+                                             loading="lazy">
+                                    </div>
+                                    <div class="card-body d-flex flex-column p-4">
+                                        <h3 class="card-title h5 fw-bold mb-2">CIMA 2025</h3>
+                                        <p class="card-text text-body-secondary mb-3">
+                                            Conferencia de Impulso Misionero. Un encuentro nacional de fe, crecimiento espiritual y misiones.
+                                        </p>
+                                        <div class="mt-auto">
+                                            <!-- Detalles del evento -->
+                                            <dl class="row small mb-3">
+                                                <dt class="col-2 text-primary"><i class="fas fa-calendar-alt" aria-hidden="true"></i></dt>
+                                                <dd class="col-10 mb-2">14 de 17 de noviembre de 2025</dd>
+                                                <dt class="col-2 text-success"><i class="fas fa-clock" aria-hidden="true"></i></dt>
+                                                <dd class="col-10 mb-2">9:00 AM</dd>
+                                                <dt class="col-2 text-info"><i class="fas fa-globe" aria-hidden="true"></i></dt>
+                                                <dd class="col-10 mb-0">Evento nacional - CDMX</dd>
+                                            </dl>
+                                            <div class="d-grid">
+                                                <a href="events/Evento3.ics" 
+                                                   class="btn btn-danger" 
+                                                   aria-label="Añadir CIMA 2025 al calendario" 
+                                                   target="_blank" 
+                                                   rel="noopener">
+                                                    <i class="fa-regular fa-calendar me-2"></i>Agregar al calendario
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                            
+                            <!-- Evento 6: Especial de Navidad -->
+                            <div class="col">
+                                <article class="card h-100 border-0 shadow-sm" 
+                                         data-aos="fade-up" 
+                                         data-aos-delay="300" 
+                                         data-aos-duration="800">
+                                    <div class="ratio ratio-16x9">
+                                        <img src="assets/images/Extras/Evento3.png" 
+                                             class="card-img-top object-fit-cover" 
+                                             alt="Conferencia CIMA 2025 - Impulso Misionero" 
+                                             loading="lazy">
+                                    </div>
+                                    <div class="card-body d-flex flex-column p-4">
+                                        <h3 class="card-title h5 fw-bold mb-2">Especial de Navidad</h3>
+                                        <p class="card-text text-body-secondary mb-3">
+                                            Conferencia de Impulso Misionero. Un encuentro nacional de fe, crecimiento espiritual y misiones.
+                                        </p>
+                                        <div class="mt-auto">
+                                            <!-- Detalles del evento -->
+                                            <dl class="row small mb-3">
+                                                <dt class="col-2 text-primary"><i class="fas fa-calendar-alt" aria-hidden="true"></i></dt>
+                                                <dd class="col-10 mb-2">6 de 7 de diciembre de 2025</dd>
+                                                <dt class="col-2 text-success"><i class="fas fa-clock" aria-hidden="true"></i></dt>
+                                                <dd class="col-10 mb-2">9:00 AM</dd>
+                                                <dt class="col-2 text-info"><i class="fas fa-globe" aria-hidden="true"></i></dt>
+                                                <dd class="col-10 mb-0">Evento nacional - CDMX</dd>
+                                            </dl>
+                                            <div class="d-grid">
+                                                <a href="events/Evento3.ics" 
+                                                   class="btn btn-danger" 
+                                                   aria-label="Añadir CIMA 2025 al calendario" 
+                                                   target="_blank" 
+                                                   rel="noopener">
+                                                    <i class="fa-regular fa-calendar me-2"></i>Agregar al calendario
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container py-3">
+            <!-- Versión de escritorio del footer -->
+            <div class="d-none d-lg-block">
+                <div class="row">
+                    <!-- Información de contacto -->
+                    <div class="col-lg-4 footer-section">
+                        <h5><i class="fas fa-address-book me-2"></i>Información de Contacto</h5>
+                        <p class="mb-2">
+                            <i class="fas fa-map-marker-alt me-2"></i><strong>Dirección:</strong><br>
+                            Av. Eugenio Garza Sada 6309, <br>
+                            64890 Monterrey, N.L.
+                        </p>
+                        <p class="mb-2">
+                            <i class="fas fa-envelope me-2"></i><strong>Correo Electrónico:</strong><br>
+                            <a href="mailto:ibmty@ribbi.org">ibmty@ribbi.org</a><br>
+                        </p>
+                        <p class="mb-0">
+                            <i class="fas fa-phone me-2"></i><strong>Teléfono:</strong><br>
+                            <a href="tel:+528132503031">+52 81 3250 3031</a><br>
+                        </p>
+                    </div>
+                    
+                    <!-- Enlaces externos -->
+                    <div class="col-lg-4 footer-section">
+                        <h5><i class="fas fa-external-link-alt me-2"></i>Enlaces de Externos</h5>
+                        <a href="https://www.ribbi.org/" class="d-block small py-1">
+                            <i class="fa-solid fa-network-wired me-1"></i>RIBBI 
+                        </a>
+                        <a href="https://elsaucillo.org/" class="d-block small py-1">
+                            <i class="fa-solid fa-mountain-sun me-1"></i>El Saucillo 
+                        </a>
+                    </div>
+                    
+                    <!-- Redes sociales -->
+                    <div class="col-lg-4 footer-section">
+                        <h5><i class="fas fa-share-alt me-2"></i>Mantente en Contacto</h5>
+                        <p class="mb-2">Síguenos en nuestras redes sociales para estar al día con nuestras actividades y eventos.</p>
+                        <div class="social-icons">
+                            <a href="https://www.facebook.com/IBMty/" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                            <a href="https://instagram.com/iglesiabautistademonterrey?igshid=1w5xur063yc44" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="https://wa.me/528132503031?text=Hola,%20me%20interesa%20recibir%20informaci%C3%B3n%20de%20la%20iglesia" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                            <a href="https://www.youtube.com/channel/UCfhSTnqLb6vFO28eNm_n0qw" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Versión móvil del footer -->
+            <div class="d-lg-none">
+                <!-- Redes sociales (móvil) -->
+                <div class="row mb-3">
+                    <div class="col-12 text-center footer-section">
+                        <h5><i class="fas fa-share-alt me-2"></i>Mantente en Contacto</h5>
+                        <p class="mb-2">Síguenos en nuestras redes sociales para estar al día con nuestras actividades.</p>
+                        <div class="social-icons">
+                            <a href="https://www.facebook.com/IBMty/" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                            <a href="https://instagram.com/iglesiabautistademonterrey?igshid=1w5xur063yc44" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="https://wa.me/528132503031?text=Hola,%20me%20interesa%20recibir%20informaci%C3%B3n%20de%20la%20iglesia" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                            <a href="https://www.youtube.com/channel/UCfhSTnqLb6vFO28eNm_n0qw" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Información de contacto y enlaces (móvil) -->
+                <div class="row mb-0">
+                    <div class="col-6 footer-section">
+                        <h6><i class="fas fa-address-book me-1"></i>Contacto</h6>
+                        <p class="small mb-2">
+                            Av. Eugenio Garza Sada 6309, <br>
+                            64890 Monterrey, N.L.
+                        </p>
+                        <p class="small mb-2">
+                            <i class="fas fa-envelope me-1"></i>
+                            <a href="mailto:contacto@iglesia.org">contacto@iglesia.org</a>
+                        </p>
+                        <p class="small mb-0">
+                            <i class="fas fa-phone me-1"></i>
+                            <a href="tel:+525512345678">+52 55 1234 5678</a>
+                        </p>
+                    </div>
+                    <div class="col-6 footer-section">
+                        <h6><i class="fas fa-external-link-alt me-1"></i>Enlaces</h6>
+                        <a href="https://www.ribbi.org/" class="d-block small py-1">
+                            <i class="fa-solid fa-network-wired me-1"></i>RIBBI 
+                        </a>
+                        <a href="https://elsaucillo.org/" class="d-block small py-1">
+                            <i class="fa-solid fa-mountain-sun me-1"></i>El Saucillo 
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Pie de página con copyright -->
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6 text-center text-md-start">
+                        <div class="d-flex flex-column flex-sm-row justify-content-center justify-content-md-start">
+                            <a href="#" class="me-3 mb-1 mb-sm-0 small">Aviso de Privacidad</a>
+                            <a href="#" class="me-3 mb-1 mb-sm-0 small">Términos y Condiciones</a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <p class="mb-0 small">© Iglesia Bautista de Monterrey <span id="currentYear"></span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw==" crossorigin="anonymous"></script>
+    <script src="js/utils.js"></script>
+</body>
+</html>

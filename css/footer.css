@@ -1,0 +1,578 @@
+/* ========================================
+   VARIABLES CSS PERSONALIZADAS
+   ======================================== */
+
+:root {
+    /* Colores de fondo para temas claro y oscuro */
+    --footer-bg-light: #f8f9fa;
+    --footer-bg-dark: #1a1a1a;
+    
+    /* Colores de texto para temas claro y oscuro */
+    --footer-text-light: #495057;
+    --footer-text-dark: #e9ecef;
+    
+    /* Colores de encabezados para temas claro y oscuro */
+    --footer-heading-light: #212529;
+    --footer-heading-dark: #ffffff;
+    
+    /* Colores de bordes para temas claro y oscuro */
+    --footer-border-light: #dee2e6;
+    --footer-border-dark: #495057;
+    
+    /* Colores de fondo para la sección inferior */
+    --footer-bottom-bg-light: #ffffff;
+    --footer-bottom-bg-dark: #121212;
+    
+    /* Color de hover para enlaces */
+    --footer-link-hover: #00c0f6;
+    
+    /* Colores específicos de redes sociales */
+    --facebook-color: #1877f2;
+    --instagram-color: #e4405f;
+    --whatsapp-color: #25d366;
+    --youtube-color: #ff0000;
+    
+    /* Fondos para iconos de redes sociales */
+    --social-bg-light: rgba(255, 255, 255, 0.8);
+    --social-bg-dark: rgba(255, 255, 255, 0.1);
+}
+
+/* ========================================
+   CLASES UTILITARIAS PERSONALIZADAS
+   ======================================== */
+
+/* Clases de padding personalizadas */
+.py-2-5 {
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+}
+
+.py-3-5 {
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
+}
+
+/* ========================================
+   ESTILOS PRINCIPALES DEL FOOTER
+   ======================================== */
+
+.footer {
+    background: var(--footer-bg-light);
+    color: var(--footer-text-light);
+    margin-top: auto; /* Para sticky footer */
+    transition: all 0.3s ease;
+}
+
+/* Estilos para tema oscuro */
+[data-bs-theme="dark"] .footer {
+    background: var(--footer-bg-dark);
+    color: var(--footer-text-dark);
+}
+
+/* ========================================
+   ESTILOS DE SECCIONES DEL FOOTER
+   ======================================== */
+
+.footer-section {
+    margin-bottom: 1.5rem;
+}
+
+/* Estilos de encabezados de sección */
+.footer-section h5,
+.footer-section h6 {
+    color: var(--footer-heading-light);
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Encabezados en tema oscuro */
+[data-bs-theme="dark"] .footer-section h5,
+[data-bs-theme="dark"] .footer-section h6 {
+    color: var(--footer-heading-dark);
+}
+
+/* Iconos en encabezados */
+.footer-section h5 i,
+.footer-section h6 i {
+    color: var(--footer-link-hover);
+    font-size: 1.1rem;
+}
+
+/* Estilos de párrafos */
+.footer-section p {
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+}
+
+.footer-section p:last-child {
+    margin-bottom: 0;
+}
+
+/* Texto en negrita */
+.footer-section strong {
+    color: var(--footer-heading-light);
+    font-weight: 600;
+}
+
+[data-bs-theme="dark"] .footer-section strong {
+    color: var(--footer-heading-dark);
+}
+
+/* ========================================
+   ESTILOS DE ENLACES DEL FOOTER
+   ======================================== */
+
+.footer-section a {
+    color: var(--footer-text-light);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    position: relative;
+}
+
+/* Enlaces en tema oscuro */
+[data-bs-theme="dark"] .footer-section a {
+    color: var(--footer-text-dark);
+}
+
+/* Efectos hover en enlaces */
+.footer-section a:hover {
+    color: var(--footer-link-hover);
+    text-decoration: none;
+    transform: translateX(5px);
+}
+
+/* Iconos en enlaces */
+.footer-section a i {
+    width: 16px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+/* ========================================
+   ESTILOS DE REDES SOCIALES
+   ======================================== */
+
+.social-icons {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 0.75rem;
+}
+
+/* Estilos base para iconos de redes sociales */
+.social-icons a {
+    background: var(--social-bg-light);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    border: 2px solid transparent;
+    color: #666666;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Iconos de redes sociales en tema oscuro */
+[data-bs-theme="dark"] .social-icons a {
+    background: var(--social-bg-dark);
+    color: #cccccc;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Efectos hover específicos para Facebook */
+.social-icons a.facebook:hover,
+.social-icons a[aria-label*="Facebook"]:hover,
+.social-icons a[href*="facebook"]:hover {
+    background: var(--facebook-color);
+    color: #ffffff;
+    border-color: var(--facebook-color);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 20px rgba(24, 119, 242, 0.4);
+}
+
+/* Efectos hover específicos para Instagram */
+.social-icons a.instagram:hover,
+.social-icons a[aria-label*="Instagram"]:hover,
+.social-icons a[href*="instagram"]:hover {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    color: #ffffff;
+    border-color: var(--instagram-color);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 20px rgba(228, 64, 95, 0.4);
+}
+
+/* Efectos hover específicos para WhatsApp */
+.social-icons a.whatsapp:hover,
+.social-icons a[aria-label*="WhatsApp"]:hover,
+.social-icons a[href*="wa.me"]:hover,
+.social-icons a[href*="whatsapp"]:hover {
+    background: var(--whatsapp-color);
+    color: #ffffff;
+    border-color: var(--whatsapp-color);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
+}
+
+/* Efectos hover específicos para YouTube */
+.social-icons a.youtube:hover,
+.social-icons a[aria-label*="YouTube"]:hover,
+.social-icons a[href*="youtube"]:hover {
+    background: var(--youtube-color);
+    color: #ffffff;
+    border-color: var(--youtube-color);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 20px rgba(255, 0, 0, 0.4);
+}
+
+/* ========================================
+   ESTILOS DE LA SECCIÓN INFERIOR
+   ======================================== */
+
+.footer-bottom {
+    background: var(--footer-bottom-bg-light);
+    border-top: 1px solid var(--footer-border-light);
+    padding: 1rem 0;
+    margin-top: 1.5rem;
+}
+
+/* Sección inferior en tema oscuro */
+[data-bs-theme="dark"] .footer-bottom {
+    background: var(--footer-bottom-bg-dark);
+    border-top-color: var(--footer-border-dark);
+}
+
+/* Enlaces en la sección inferior */
+.footer-bottom a {
+    color: var(--footer-text-light);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+[data-bs-theme="dark"] .footer-bottom a {
+    color: var(--footer-text-dark);
+}
+
+.footer-bottom a:hover {
+    color: var(--footer-link-hover);
+    text-decoration: underline;
+}
+
+/* Texto pequeño en la sección inferior */
+.footer-bottom .small {
+    font-size: 0.875rem;
+    opacity: 0.8;
+}
+
+/* ========================================
+   ESTILOS RESPONSIVOS - ESCRITORIO
+   ======================================== */
+
+@media (min-width: 992px) {
+    /* Contenedor máximo para escritorio */
+    .footer .container {
+        max-width: 1200px;
+    }
+
+    /* Eliminar margen inferior en escritorio */
+    .footer-section {
+        margin-bottom: 0;
+    }
+
+    /* Encabezados más grandes en escritorio */
+    .footer-section h5 {
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+    }
+
+    /* Espaciado de párrafos en escritorio */
+    .footer-section p {
+        margin-bottom: 0.75rem;
+    }
+
+    /* Alineación de redes sociales en escritorio */
+    .social-icons {
+        justify-content: flex-start;
+        margin-top: 1rem;
+    }
+
+    .social-icons a {
+        margin-right: 0;
+    }
+}
+
+/* ========================================
+   ESTILOS RESPONSIVOS - TABLET
+   ======================================== */
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+    /* Padding del contenedor en tablet */
+    .footer .container {
+        padding: 1.5rem 1.5rem;
+    }
+
+    /* Espaciado de secciones en tablet */
+    .footer-section {
+        margin-bottom: 1.5rem;
+    }
+
+    /* Redes sociales centradas en tablet */
+    .social-icons {
+        justify-content: center;
+        gap: 1rem;
+    }
+}
+
+/* ========================================
+   ESTILOS RESPONSIVOS - MÓVIL
+   ======================================== */
+
+@media (max-width: 767.98px) {
+    /* Padding reducido en móvil */
+    .footer .container {
+        padding: 1rem 1rem;
+    }
+
+    /* Centrar contenido en móvil */
+    .footer-section {
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
+    .footer-section:last-child {
+        margin-bottom: 0;
+    }
+
+    /* Encabezados centrados en móvil */
+    .footer-section h5,
+    .footer-section h6 {
+        font-size: 1.1rem;
+        justify-content: center;
+        margin-bottom: 0.75rem;
+    }
+
+    .footer-section h6 {
+        font-size: 1rem;
+    }
+
+    /* Texto más pequeño en móvil */
+    .footer-section p {
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+    }
+
+    /* Enlaces centrados en móvil */
+    .footer-section a {
+        font-size: 0.9rem;
+        justify-content: center;
+    }
+
+    /* Efecto hover modificado para móvil */
+    .footer-section a:hover {
+        transform: translateX(0) translateY(-2px);
+    }
+
+    /* Redes sociales en móvil */
+    .social-icons {
+        justify-content: center;
+        gap: 0.5rem;
+        margin-top: 0.75rem;
+    }
+
+    .social-icons a {
+        width: 40px;
+        height: 40px;
+        font-size: 1.1rem;
+    }
+
+    /* Estilos específicos para layout móvil */
+    .d-lg-none .row.mb-3 {
+        margin-bottom: 1rem !important;
+    }
+
+    .d-lg-none .row.mb-0 {
+        margin-bottom: 0 !important;
+    }
+
+    /* Alineación a la izquierda para columnas móviles */
+    .d-lg-none .col-6 {
+        text-align: left;
+    }
+
+    .d-lg-none .col-6 .footer-section {
+        text-align: left;
+    }
+
+    .d-lg-none .col-6 .footer-section h6 {
+        justify-content: flex-start;
+        font-size: 0.95rem;
+    }
+
+    .d-lg-none .col-6 .footer-section a {
+        justify-content: flex-start;
+        font-size: 0.85rem;
+    }
+
+    .d-lg-none .col-6 .footer-section p {
+        font-size: 0.85rem;
+        text-align: left;
+    }
+}
+
+/* ========================================
+   ESTILOS RESPONSIVOS - MÓVILES PEQUEÑOS
+   ======================================== */
+
+@media (max-width: 576px) {
+    /* Padding mínimo para móviles pequeños */
+    .footer .container {
+        padding: 0.75rem 0.75rem;
+    }
+
+    /* Espaciado reducido */
+    .footer-section {
+        margin-bottom: 1rem;
+    }
+
+    /* Tamaños de fuente reducidos */
+    .footer-section h5 {
+        font-size: 1rem;
+    }
+
+    .footer-section h6 {
+        font-size: 0.9rem;
+    }
+
+    .footer-section a,
+    .footer-section p {
+        font-size: 0.85rem;
+    }
+
+    /* Iconos de redes sociales más pequeños */
+    .social-icons a {
+        width: 38px;
+        height: 38px;
+        font-size: 1rem;
+    }
+
+    /* Sección inferior más compacta */
+    .footer-bottom {
+        padding: 0.75rem 0;
+    }
+
+    .footer-bottom .small {
+        font-size: 0.8rem;
+    }
+
+    /* Ajustes específicos para layout móvil pequeño */
+    .d-lg-none .col-6 .footer-section h6 {
+        font-size: 0.9rem;
+    }
+
+    .d-lg-none .col-6 .footer-section a,
+    .d-lg-none .col-6 .footer-section p {
+        font-size: 0.8rem;
+    }
+}
+
+/* ========================================
+   ANIMACIONES Y EFECTOS ESPECIALES
+   ======================================== */
+
+/* Animación de entrada para secciones */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Aplicar animación a las secciones */
+.footer-section {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+/* Retrasos escalonados para las animaciones */
+.footer-section:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.footer-section:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+/* Efecto de subrayado animado en enlaces */
+.footer-section a::before {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--footer-link-hover);
+    transition: width 0.3s ease;
+}
+
+.footer-section a:hover::before {
+    width: 100%;
+}
+
+/* ========================================
+   ACCESIBILIDAD Y PREFERENCIAS DE USUARIO
+   ======================================== */
+
+/* Desactivar animaciones para usuarios que prefieren movimiento reducido */
+@media (prefers-reduced-motion: reduce) {
+    .footer-section,
+    .footer-section a,
+    .social-icons a {
+        animation: none;
+        transition: none;
+    }
+
+    .footer-section a:hover,
+    .social-icons a:hover {
+        transform: none;
+    }
+}
+
+/* Estilos de foco para accesibilidad */
+.footer-section a:focus,
+.social-icons a:focus {
+    outline: 2px solid var(--footer-link-hover);
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+/* ========================================
+   ESTILOS PARA IMPRESIÓN
+   ======================================== */
+
+@media print {
+    /* Simplificar estilos para impresión */
+    .footer {
+        background: #ffffff !important;
+        color: #000000 !important;
+        box-shadow: none;
+    }
+
+    /* Ocultar redes sociales en impresión */
+    .social-icons {
+        display: none;
+    }
+}

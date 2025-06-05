@@ -1,0 +1,816 @@
+/* ========================================
+   VARIABLES CSS PERSONALIZADAS
+   ======================================== */
+
+:root {
+    /* Colores de fondo para temas claro y oscuro */
+    --ministerios-bg-light: #f8fafc;
+    --ministerios-bg-dark: #0f172a;
+    
+    /* Colores de texto para temas claro y oscuro */
+    --ministerios-text-light: #334155;
+    --ministerios-text-dark: #e2e8f0;
+    
+    /* Colores de encabezados para temas claro y oscuro */
+    --ministerios-heading-light: #1e293b;
+    --ministerios-heading-dark: #f1f5f9;
+    
+    /* Colores de fondo para tarjetas */
+    --card-bg-light: #ffffff;
+    --card-bg-dark: #1e293b;
+    
+    /* Sombras para tarjetas en estado normal */
+    --card-shadow-light: 0 15px 35px rgba(0, 0, 0, 0.08);
+    --card-shadow-dark: 0 15px 35px rgba(0, 0, 0, 0.25);
+    
+    /* Sombras para tarjetas en estado hover */
+    --card-hover-shadow-light: 0 25px 50px rgba(0, 0, 0, 0.15);
+    --card-hover-shadow-dark: 0 25px 50px rgba(0, 0, 0, 0.4);
+    
+    /* Overlays para banners de tarjetas */
+    --banner-overlay-light: linear-gradient(transparent, rgba(0, 0, 0, 0.2));
+    --banner-overlay-dark: linear-gradient(transparent, rgba(0, 0, 0, 0.5));
+    
+    /* Efectos de cristal (glassmorphism) */
+    --glass-bg-light: rgba(255, 255, 255, 0.85);
+    --glass-bg-dark: rgba(30, 41, 59, 0.85);
+    --glass-border-light: rgba(255, 255, 255, 0.2);
+    --glass-border-dark: rgba(255, 255, 255, 0.1);
+    
+    /* Colores de acento para gradientes */
+    --primary-accent: #00c0f6;
+    --secondary-accent: #667eea;
+    --tertiary-accent: #764ba2;
+    
+    /* Espaciados responsivos usando clamp() */
+    --section-spacing: clamp(40px, 8vw, 80px);
+    --card-spacing: clamp(20px, 4vw, 30px);
+}
+
+/* ========================================
+   CONTENEDOR PRINCIPAL DE LA PÁGINA
+   ======================================== */
+
+.ministerios-page {
+    background: var(--ministerios-bg-light);
+    color: var(--ministerios-text-light);
+    min-height: calc(100vh - 140px); /* Altura mínima menos navbar y footer */
+    padding: var(--section-spacing) 0;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow-x: hidden; /* Prevenir scroll horizontal */
+}
+
+/* Estilos para tema oscuro */
+[data-bs-theme="dark"] .ministerios-page {
+    background: var(--ministerios-bg-dark);
+    color: var(--ministerios-text-dark);
+}
+
+/* Fondo decorativo con gradientes radiales */
+.ministerios-page::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+        radial-gradient(circle at 20% 80%, rgba(0, 192, 246, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(102, 126, 234, 0.05) 0%, transparent 50%);
+    pointer-events: none; /* No interferir con interacciones */
+    z-index: 0;
+}
+
+/* Fondo decorativo más intenso para tema oscuro */
+[data-bs-theme="dark"] .ministerios-page::before {
+    background:
+        radial-gradient(circle at 20% 80%, rgba(0, 192, 246, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(102, 126, 234, 0.08) 0%, transparent 50%);
+}
+
+/* ========================================
+   CONTENEDOR DE LA GALERÍA
+   ======================================== */
+
+.ministerios-gallery-container {
+    position: relative;
+    z-index: 1; /* Sobre el fondo decorativo */
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 clamp(15px, 4vw, 30px); /* Padding responsivo */
+}
+
+/* ========================================
+   ENCABEZADO DE LA GALERÍA
+   ======================================== */
+
+.ministerios-gallery-header {
+    text-align: center;
+    margin-bottom: var(--section-spacing);
+    position: relative;
+}
+
+/* Título principal con gradiente de texto */
+.ministerios-gallery-title {
+    color: var(--ministerios-heading-light);
+    font-size: clamp(32px, 6vw, 48px); /* Tamaño responsivo */
+    font-weight: 800;
+    margin-bottom: 12px;
+    text-shadow: none;
+    position: relative;
+    /* Gradiente de texto usando background-clip */
+    background: linear-gradient(135deg, var(--primary-accent), var(--secondary-accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Título en tema oscuro con sombra de texto */
+[data-bs-theme="dark"] .ministerios-gallery-title {
+    color: var(--ministerios-heading-dark);
+    text-shadow: 0 2px 20px rgba(0, 192, 246, 0.2);
+}
+
+/* Subtítulo descriptivo */
+.ministerios-gallery-subtitle {
+    color: var(--ministerios-text-light);
+    font-size: clamp(16px, 3vw, 20px);
+    font-weight: 400;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+    opacity: 0.8;
+}
+
+[data-bs-theme="dark"] .ministerios-gallery-subtitle {
+    color: var(--ministerios-text-dark);
+}
+
+/* Línea decorativa debajo del encabezado */
+.ministerios-gallery-header::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-accent), var(--secondary-accent));
+    margin: 20px auto 0;
+    border-radius: 2px;
+}
+
+/* ========================================
+   CONTENEDOR DE SCROLL HORIZONTAL
+   ======================================== */
+
+.ministerios-scroll-container {
+    position: relative;
+    margin: var(--card-spacing) 0;
+}
+
+/* Galería con scroll horizontal */
+.ministerios-profile-gallery {
+    display: flex;
+    gap: var(--card-spacing);
+    padding: 25px 10px;
+    overflow-x: auto; /* Scroll horizontal */
+    scroll-behavior: smooth; /* Scroll suave */
+    scrollbar-width: thin; /* Firefox */
+    scrollbar-color: var(--primary-accent) transparent;
+    scroll-snap-type: x mandatory; /* Snap al hacer scroll */
+    -webkit-overflow-scrolling: touch; /* iOS smooth scrolling */
+}
+
+/* Estilos de scrollbar para WebKit (Chrome, Safari) */
+.ministerios-profile-gallery::-webkit-scrollbar {
+    height: 6px;
+}
+
+.ministerios-profile-gallery::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 3px;
+}
+
+.ministerios-profile-gallery::-webkit-scrollbar-thumb {
+    background: var(--primary-accent);
+    border-radius: 3px;
+}
+
+/* Scrollbar en tema oscuro */
+[data-bs-theme="dark"] .ministerios-profile-gallery::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* ========================================
+   TARJETAS DE PERFIL DE MINISTERIOS
+   ======================================== */
+
+.ministerios-profile-card {
+    flex: 0 0 340px; /* Ancho fijo, no crecer ni encoger */
+    background: var(--card-bg-light);
+    border-radius: 24px;
+    overflow: visible; /* Para permitir que el avatar sobresalga */
+    box-shadow: var(--card-shadow-light);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1); /* Easing suave */
+    position: relative;
+    scroll-snap-align: center; /* Centrar al hacer scroll */
+    cursor: pointer;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    backdrop-filter: blur(10px); /* Efecto de cristal */
+    z-index: 1;
+}
+
+/* Tarjetas en tema oscuro */
+[data-bs-theme="dark"] .ministerios-profile-card {
+    background: var(--card-bg-dark);
+    box-shadow: var(--card-shadow-dark);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Efectos hover en las tarjetas */
+.ministerios-profile-card:hover {
+    transform: translateY(-20px) scale(1.02); /* Elevación y ligero aumento */
+    box-shadow: var(--card-hover-shadow-light);
+    z-index: 10; /* Traer al frente */
+}
+
+[data-bs-theme="dark"] .ministerios-profile-card:hover {
+    box-shadow: var(--card-hover-shadow-dark);
+}
+
+/* ========================================
+   BANNERS DE LAS TARJETAS
+   ======================================== */
+
+.ministerios-card-banner {
+    height: 180px;
+    background: linear-gradient(135deg, var(--secondary-accent), var(--tertiary-accent));
+    position: relative;
+    overflow: visible;
+    z-index: 3;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Imágenes específicas para cada ministerio */
+.ministerios-profile-card:nth-child(1) .ministerios-card-banner {
+    background-image: url('../assets/images/lideres/Lideres_Iglesia.png');
+}
+
+.ministerios-profile-card:nth-child(2) .ministerios-card-banner {
+    background-image: url('../assets/images/lideres/Lideres_Adultos.png');
+}
+
+.ministerios-profile-card:nth-child(3) .ministerios-card-banner {
+    background-image: url('../assets/images/lideres/Lideres_Profesionistas.png');
+}
+
+.ministerios-profile-card:nth-child(4) .ministerios-card-banner {
+    background-image: url('../assets/images/lideres/Lideres_Universitarios.png');
+}
+
+.ministerios-profile-card:nth-child(5) .ministerios-card-banner {
+    background-image: url('../assets/images/lideres/Lideres_Jovenes.png');
+}
+
+.ministerios-profile-card:nth-child(6) .ministerios-card-banner {
+    background-image: url('../assets/images/lideres/Lideres_Intermedios.png');
+}
+
+/* Overlay oscuro sobre los banners */
+.ministerios-banner-overlay {
+    position: absolute;
+    inset: 0; /* Equivale a top: 0, right: 0, bottom: 0, left: 0 */
+    background: var(--banner-overlay-light);
+    transition: opacity 0.3s ease;
+    z-index: 2;
+}
+
+[data-bs-theme="dark"] .ministerios-banner-overlay {
+    background: var(--banner-overlay-dark);
+}
+
+/* Intensificar overlay en hover */
+.ministerios-profile-card:hover .ministerios-banner-overlay {
+    opacity: 0.7;
+}
+
+/* ========================================
+   AVATARES DE LOS MINISTERIOS
+   ======================================== */
+
+.ministerios-profile-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 5px solid var(--card-bg-light);
+    position: absolute;
+    bottom: -50px; /* Sobresalir de la tarjeta */
+    left: 50%;
+    transform: translateX(-50%); /* Centrar horizontalmente */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: all 0.4s ease;
+    z-index: 15; /* Sobre el banner */
+    background-color: var(--card-bg-light);
+}
+
+/* Avatares en tema oscuro */
+[data-bs-theme="dark"] .ministerios-profile-avatar {
+    border-color: var(--card-bg-dark);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    background-color: var(--card-bg-dark);
+}
+
+/* Efectos hover en avatares */
+.ministerios-profile-card:hover .ministerios-profile-avatar {
+    transform: translateX(-50%) scale(1.15) rotate(5deg); /* Escalar y rotar */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    z-index: 25;
+}
+
+/* Logos específicos para cada ministerio */
+.ministerios-profile-card:nth-child(1) .ministerios-profile-avatar {
+    background-image: url('../assets/images/logos/IBMty_Icon_90.png');
+}
+
+.ministerios-profile-card:nth-child(2) .ministerios-profile-avatar {
+    background-image: url('../assets/images/logos/Logo_Adultos_90.png');
+}
+
+.ministerios-profile-card:nth-child(3) .ministerios-profile-avatar {
+    background-image: url('../assets/images/logos/Logo_Profesionistas_90.png');
+}
+
+.ministerios-profile-card:nth-child(4) .ministerios-profile-avatar {
+    background-image: url('../assets/images/logos/Logo_Universitarios_90.png');
+}
+
+.ministerios-profile-card:nth-child(5) .ministerios-profile-avatar {
+    background-image: url('../assets/images/logos/Logo_Jovenes_90.png');
+}
+
+.ministerios-profile-card:nth-child(6) .ministerios-profile-avatar {
+    background-image: url('../assets/images/logos/Logo_Intermedios_90.png');
+}
+
+/* ========================================
+   CONTENIDO DE LAS TARJETAS
+   ======================================== */
+
+.ministerios-card-content {
+    padding: 60px 30px 30px; /* Espacio extra arriba para el avatar */
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+/* Nombre del ministerio */
+.ministerios-profile-name {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--ministerios-heading-light);
+    margin-bottom: 8px;
+    transition: all 0.3s ease;
+    line-height: 1.2;
+}
+
+[data-bs-theme="dark"] .ministerios-profile-name {
+    color: var(--ministerios-heading-dark);
+}
+
+/* Efecto hover en el nombre */
+.ministerios-profile-card:hover .ministerios-profile-name {
+    color: var(--primary-accent);
+    transform: translateY(-2px);
+}
+
+/* Título/categoría del ministerio */
+.ministerios-profile-title {
+    color: var(--ministerios-text-light);
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 24px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.7;
+}
+
+[data-bs-theme="dark"] .ministerios-profile-title {
+    color: var(--ministerios-text-dark);
+}
+
+/* ========================================
+   ENLACES DE REDES SOCIALES
+   ======================================== */
+
+.ministerios-social-links {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+/* Botones de redes sociales */
+.ministerios-social-link {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efecto de brillo en los botones sociales */
+.ministerios-social-link::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 2px;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.ministerios-social-link:hover::before {
+    opacity: 1;
+}
+
+/* Iconos dentro de los botones sociales */
+.ministerios-social-link i {
+    position: relative;
+    z-index: 1;
+    transition: transform 0.3s ease;
+}
+
+.ministerios-social-link:hover i {
+    transform: scale(1.2) rotate(10deg);
+}
+
+/* Colores específicos para cada red social */
+.ministerios-social-link.twitter {
+    background: linear-gradient(135deg, #1da1f2, #0d8bd9);
+}
+
+.ministerios-social-link.facebook {
+    background: linear-gradient(135deg, #1877F2);
+}
+
+.ministerios-social-link.tiktok {
+    background: linear-gradient(135deg, #333, #24292e);
+}
+
+.ministerios-social-link.instagram {
+    background: linear-gradient(135deg, #f58529 0%, #dd2a7b 50%, #515bd4 100%);
+}
+
+/* Efectos hover en botones sociales */
+.ministerios-social-link:hover {
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* ========================================
+   DESCRIPCIÓN DEL MINISTERIO
+   ======================================== */
+
+.ministerios-profile-description {
+    color: var(--ministerios-text-light);
+    font-size: 14px;
+    line-height: 1.6;
+    max-width: 280px;
+    margin: 0 auto;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+[data-bs-theme="dark"] .ministerios-profile-description {
+    color: var(--ministerios-text-dark);
+}
+
+/* Hacer más visible la descripción en hover */
+.ministerios-profile-card:hover .ministerios-profile-description {
+    opacity: 1;
+}
+
+/* ========================================
+   NAVEGACIÓN DE SCROLL
+   ======================================== */
+
+.ministerios-scroll-nav {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 40px;
+}
+
+/* Botones de navegación con efecto glassmorphism */
+.ministerios-scroll-btn {
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    background: var(--glass-bg-light);
+    border: 2px solid var(--glass-border-light);
+    color: var(--ministerios-text-light);
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(15px); /* Efecto de cristal */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Botones de navegación en tema oscuro */
+[data-bs-theme="dark"] .ministerios-scroll-btn {
+    background: var(--glass-bg-dark);
+    border-color: var(--glass-border-dark);
+    color: var(--ministerios-text-dark);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Efectos hover en botones de navegación */
+.ministerios-scroll-btn:hover:not(:disabled) {
+    background: var(--primary-accent);
+    border-color: var(--primary-accent);
+    color: white;
+    transform: scale(1.1);
+    box-shadow: 0 12px 30px rgba(0, 192, 246, 0.3);
+}
+
+/* Estado deshabilitado */
+.ministerios-scroll-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* ========================================
+   INDICADORES DE POSICIÓN
+   ======================================== */
+
+.ministerios-scroll-indicator {
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 2;
+}
+
+/* Puntos indicadores */
+.ministerios-indicator-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+}
+
+[data-bs-theme="dark"] .ministerios-indicator-dot {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Efecto de activación en indicadores */
+.ministerios-indicator-dot::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: 50%;
+    background: var(--primary-accent);
+    opacity: 0;
+    transform: scale(0);
+    transition: all 0.3s ease;
+}
+
+.ministerios-indicator-dot.active::before {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.ministerios-indicator-dot:hover::before {
+    opacity: 0.7;
+    transform: scale(1.2);
+}
+
+/* ========================================
+   ESTILOS RESPONSIVOS - TABLET
+   ======================================== */
+
+@media (max-width: 1024px) {
+    .ministerios-profile-card {
+        flex: 0 0 320px; /* Tarjetas más pequeñas */
+    }
+
+    .ministerios-card-banner {
+        height: 160px; /* Banner más bajo */
+    }
+}
+
+/* ========================================
+   ESTILOS RESPONSIVOS - MÓVIL
+   ======================================== */
+
+@media (max-width: 768px) {
+    .ministerios-profile-gallery {
+        gap: 20px;
+        padding: 20px 5px;
+    }
+
+    .ministerios-profile-card {
+        flex: 0 0 300px;
+    }
+
+    .ministerios-card-banner {
+        height: 150px;
+    }
+
+    /* Avatar más pequeño */
+    .ministerios-profile-avatar {
+        width: 90px;
+        height: 90px;
+        bottom: -45px;
+    }
+
+    .ministerios-card-content {
+        padding: 55px 25px 25px;
+    }
+
+    /* Botones sociales más pequeños */
+    .ministerios-social-link {
+        width: 38px;
+        height: 38px;
+        font-size: 14px;
+    }
+
+    /* Botones de navegación más pequeños */
+    .ministerios-scroll-btn {
+        width: 48px;
+        height: 48px;
+        font-size: 16px;
+    }
+}
+
+/* ========================================
+   ESTILOS RESPONSIVOS - MÓVILES PEQUEÑOS
+   ======================================== */
+
+@media (max-width: 480px) {
+    .ministerios-profile-card {
+        flex: 0 0 280px; /* Tarjetas aún más pequeñas */
+    }
+
+    .ministerios-profile-gallery {
+        gap: 16px;
+    }
+
+    .ministerios-card-banner {
+        height: 140px;
+    }
+
+    /* Avatar más pequeño para móviles */
+    .ministerios-profile-avatar {
+        width: 80px;
+        height: 80px;
+        bottom: -40px;
+    }
+
+    .ministerios-card-content {
+        padding: 50px 20px 20px;
+    }
+
+    /* Texto más pequeño */
+    .ministerios-profile-name {
+        font-size: 22px;
+    }
+
+    /* Botones sociales mínimos */
+    .ministerios-social-link {
+        width: 36px;
+        height: 36px;
+        font-size: 13px;
+    }
+}
+
+/* ========================================
+   ANIMACIONES Y KEYFRAMES
+   ======================================== */
+
+/* Animación de entrada desde abajo */
+@keyframes ministeriosFadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animación de entrada desde la izquierda */
+@keyframes ministeriosSlideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Aplicar animaciones a las tarjetas */
+.ministerios-profile-card {
+    animation: ministeriosFadeInUp 0.8s ease forwards;
+}
+
+/* Retrasos escalonados para crear efecto cascada */
+.ministerios-profile-card:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.ministerios-profile-card:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+.ministerios-profile-card:nth-child(4) {
+    animation-delay: 0.3s;
+}
+
+.ministerios-profile-card:nth-child(5) {
+    animation-delay: 0.4s;
+}
+
+.ministerios-profile-card:nth-child(6) {
+    animation-delay: 0.5s;
+}
+
+/* Animación del encabezado */
+.ministerios-gallery-header {
+    animation: ministeriosSlideIn 0.6s ease forwards;
+}
+
+/* ========================================
+   ACCESIBILIDAD Y PREFERENCIAS DE USUARIO
+   ======================================== */
+
+/* Desactivar animaciones para usuarios que prefieren movimiento reducido */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    /* Desactivar transformaciones en hover */
+    .ministerios-profile-card:hover,
+    .ministerios-social-link:hover,
+    .ministerios-scroll-btn:hover {
+        transform: none;
+    }
+}
+
+/* Estados de foco para navegación por teclado */
+.ministerios-social-link:focus,
+.ministerios-scroll-btn:focus,
+.ministerios-indicator-dot:focus {
+    outline: 3px solid var(--primary-accent);
+    outline-offset: 2px;
+    border-radius: 8px;
+}
+
+.ministerios-profile-card:focus-within {
+    outline: 2px solid var(--primary-accent);
+    outline-offset: 4px;
+}
+
+/* ========================================
+   SOPORTE PARA ALTO CONTRASTE
+   ======================================== */
+
+@media (prefers-contrast: high) {
+    /* Bordes más visibles para alto contraste */
+    .ministerios-profile-card {
+        border: 2px solid currentColor;
+    }
+
+    .ministerios-social-link {
+        border: 1px solid currentColor;
+    }
+}

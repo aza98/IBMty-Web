@@ -1,0 +1,471 @@
+/* ========================================
+   VARIABLES CSS PERSONALIZADAS
+   ======================================== */
+
+:root {
+    /* Colores de fondo para temas claro y oscuro */
+    --navbar-bg-light: rgba(255, 255, 255, 0.95);
+    --navbar-bg-dark: rgba(18, 18, 18, 0.95);
+    
+    /* Colores de texto para temas claro y oscuro */
+    --navbar-text-light: #333333;
+    --navbar-text-dark: #ffffff;
+    
+    /* Colores de hover para temas claro y oscuro */
+    --navbar-hover-light: #f8f9fa;
+    --navbar-hover-dark: #2d3748;
+    
+    /* Colores de borde para temas claro y oscuro */
+    --navbar-border-light: rgba(0, 0, 0, 0.1);
+    --navbar-border-dark: rgba(255, 255, 255, 0.1);
+    
+    /* Color primario de la marca */
+    --primary-color: #00c0f6;
+    
+    /* Efectos de sombra */
+    --navbar-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+    
+    /* Colores para el botón de cambio de tema */
+    --theme-btn-bg: rgba(0, 192, 246, 0.1);
+    --theme-btn-hover: rgba(0, 192, 246, 0.2);
+}
+
+/* ========================================
+   ESTILOS PRINCIPALES DE LA NAVBAR
+   ======================================== */
+
+.navbar {
+    /* Fondo con transparencia y efecto blur */
+    background: var(--navbar-bg-light);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    
+    /* Bordes y sombras */
+    border-bottom: 1px solid var(--navbar-border-light);
+    box-shadow: var(--navbar-shadow);
+    
+    /* Posicionamiento sticky para que permanezca fija */
+    position: sticky;
+    top: 0;
+    z-index: 1030;
+    
+    /* Transiciones suaves */
+    transition: all 0.3s ease;
+    
+    /* Espaciado y altura mínima */
+    padding: 0.75rem 0;
+    min-height: 70px;
+}
+
+/* Estilos para tema oscuro */
+[data-bs-theme="dark"] .navbar {
+    background: var(--navbar-bg-dark);
+    border-bottom-color: var(--navbar-border-dark);
+    color: var(--navbar-text-dark);
+}
+
+/* ========================================
+   CONTENEDOR PRINCIPAL DE LA NAVBAR
+   ======================================== */
+
+.navbar .container-fluid {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* ========================================
+   ESTILOS DEL LOGO/MARCA
+   ======================================== */
+
+.navbar-brand {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-brand img {
+    height: 45px;
+    width: auto;
+    transition: transform 0.3s ease;
+}
+
+/* Efecto hover en el logo */
+.navbar-brand:hover img {
+    transform: scale(1.05);
+}
+
+/* ========================================
+   ESTILOS DEL MENÚ DE NAVEGACIÓN
+   ======================================== */
+
+.navbar-nav {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.nav-item {
+    margin: 0;
+}
+
+/* Estilos de los enlaces de navegación */
+.nav-link {
+    color: var(--navbar-text-light) !important;
+    font-weight: 500;
+    padding: 0.75rem 1.25rem !important;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Color de enlaces en tema oscuro */
+[data-bs-theme="dark"] .nav-link {
+    color: var(--navbar-text-dark) !important;
+}
+
+/* Estilos de los iconos en los enlaces */
+.nav-link i {
+    font-size: 0.9rem;
+    width: 16px;
+    text-align: center;
+}
+
+/* Efectos hover en los enlaces */
+.nav-link:hover {
+    background-color: var(--navbar-hover-light);
+    transform: translateY(-2px);
+    color: var(--primary-color) !important;
+}
+
+[data-bs-theme="dark"] .nav-link:hover {
+    background-color: var(--navbar-hover-dark);
+}
+
+/* Estilos para el enlace activo */
+.nav-link.active {
+    background-color: var(--primary-color);
+    color: #ffffff !important;
+    box-shadow: 0 4px 15px rgba(0, 192, 246, 0.3);
+}
+
+.nav-link.active:hover {
+    background-color: var(--primary-color);
+    color: #ffffff !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 192, 246, 0.4);
+}
+
+/* ========================================
+   ESTILOS DEL BOTÓN DE CAMBIO DE TEMA
+   ======================================== */
+
+.theme-toggle {
+    background: var(--theme-btn-bg);
+    border: 2px solid transparent;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efectos hover del botón de tema */
+.theme-toggle:hover {
+    background: var(--theme-btn-hover);
+    border-color: var(--primary-color);
+    transform: rotate(180deg);
+}
+
+/* Icono del botón de tema */
+.theme-toggle i {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+/* Estilos del botón de tema en modo oscuro */
+[data-bs-theme="dark"] .theme-toggle {
+    background: var(--theme-btn-bg);
+}
+
+[data-bs-theme="dark"] .theme-toggle i {
+    color: var(--primary-color);
+}
+
+/* ========================================
+   ESTILOS DEL BOTÓN HAMBURGUESA (MÓVIL)
+   ======================================== */
+
+.navbar-toggler {
+    border: none;
+    padding: 0.5rem;
+    background: transparent;
+    position: relative;
+    width: 45px;
+    height: 45px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+.navbar-toggler:hover {
+    background: var(--navbar-hover-light);
+}
+
+[data-bs-theme="dark"] .navbar-toggler:hover {
+    background: var(--navbar-hover-dark);
+}
+
+/* Icono del botón hamburguesa */
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2833, 37, 41, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='m4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+/* Icono del botón hamburguesa en tema oscuro */
+[data-bs-theme="dark"] .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.85%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='m4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* ========================================
+   ESTILOS DEL MENÚ COLAPSABLE
+   ======================================== */
+
+.navbar-collapse {
+    transition: all 0.3s ease;
+}
+
+/* ========================================
+   ESTILOS RESPONSIVOS - ESCRITORIO
+   ======================================== */
+
+@media (min-width: 992px) {
+    /* Layout de grid para escritorio */
+    .navbar .container-fluid {
+        display: grid;
+        grid-template-columns: 200px 1fr 200px;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    /* Posicionamiento del logo */
+    .navbar-brand {
+        justify-self: start;
+    }
+
+    /* Mostrar logo de escritorio */
+    .navbar-brand:not(.mobile-brand) {
+        display: flex !important;
+    }
+
+    /* Ocultar logo móvil */
+    .navbar-brand.mobile-brand {
+        display: none !important;
+    }
+
+    /* Centrar menú de navegación */
+    .navbar-nav {
+        justify-self: center;
+        display: flex;
+        flex-direction: row;
+        gap: 0.25rem;
+    }
+
+    /* Posicionar botón de tema a la derecha */
+    .theme-toggle.d-none.d-lg-flex {
+        justify-self: end;
+    }
+
+    /* Ocultar elementos móviles */
+    .mobile-theme-toggle,
+    .navbar-toggler {
+        display: none !important;
+    }
+}
+
+/* ========================================
+   ESTILOS RESPONSIVOS - MÓVIL Y TABLET
+   ======================================== */
+
+@media (max-width: 991.98px) {
+    /* Layout flexbox para móvil */
+    .navbar .container-fluid {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    /* Ocultar logo de escritorio */
+    .navbar-brand:not(.mobile-brand) {
+        display: none !important;
+    }
+
+    /* Centrar logo móvil */
+    .navbar-brand.mobile-brand {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        order: 2;
+        display: flex !important;
+    }
+
+    /* Posicionar botón de tema móvil */
+    .mobile-theme-toggle {
+        order: 1;
+        flex-shrink: 0;
+    }
+
+    /* Posicionar botón hamburguesa */
+    .navbar-toggler {
+        order: 3;
+        flex-shrink: 0;
+    }
+
+    /* Ocultar botón de tema de escritorio */
+    .theme-toggle.d-none.d-lg-flex {
+        display: none !important;
+    }
+
+    /* Estilos del menú colapsable móvil */
+    .navbar-collapse {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--navbar-bg-light);
+        border-top: 1px solid var(--navbar-border-light);
+        box-shadow: var(--navbar-shadow);
+        border-radius: 0 0 15px 15px;
+        margin-top: 0;
+    }
+
+    /* Menú colapsable en tema oscuro */
+    [data-bs-theme="dark"] .navbar-collapse {
+        background: var(--navbar-bg-dark);
+        border-top-color: var(--navbar-border-dark);
+    }
+
+    /* Navegación vertical en móvil */
+    .navbar-nav {
+        flex-direction: column;
+        padding: 1rem;
+        gap: 0.5rem;
+    }
+
+    /* Enlaces de navegación en móvil */
+    .nav-link {
+        justify-content: flex-start;
+        width: 100%;
+        padding: 1rem 1.25rem !important;
+        border-radius: 12px;
+    }
+}
+
+/* ========================================
+   ESTILOS RESPONSIVOS - MÓVILES PEQUEÑOS
+   ======================================== */
+
+@media (max-width: 576px) {
+    /* Reducir padding en móviles pequeños */
+    .navbar .container-fluid {
+        padding: 0 1rem;
+    }
+
+    /* Reducir tamaño del logo */
+    .navbar-brand img {
+        height: 40px;
+    }
+
+    /* Reducir tamaño de botones */
+    .theme-toggle {
+        width: 40px;
+        height: 40px;
+    }
+
+    .navbar-toggler {
+        width: 40px;
+        height: 40px;
+    }
+
+    /* Reducir tamaño del icono */
+    .theme-toggle i {
+        font-size: 1.1rem;
+    }
+}
+
+/* ========================================
+   ANIMACIONES Y KEYFRAMES
+   ======================================== */
+
+/* Animación de entrada del menú móvil */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Aplicar animación al menú colapsable */
+.navbar-collapse.collapsing,
+.navbar-collapse.show {
+    animation: fadeInDown 0.3s ease;
+}
+
+/* ========================================
+   EFECTOS DE SCROLL (ESCRITORIO)
+   ======================================== */
+
+@media (min-width: 992px) {
+    /* Navbar compacta al hacer scroll */
+    .navbar.scrolled {
+        padding: 0.5rem 0;
+        box-shadow: 0 4px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Logo más pequeño al hacer scroll */
+    .navbar.scrolled .navbar-brand img {
+        height: 40px;
+    }
+}
+
+/* ========================================
+   ACCESIBILIDAD - MOVIMIENTO REDUCIDO
+   ======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    /* Desactivar transiciones para usuarios que prefieren movimiento reducido */
+    .nav-link,
+    .navbar-brand img,
+    .navbar-toggler,
+    .theme-toggle {
+        transition: none;
+    }
+
+    /* Desactivar transformaciones en hover */
+    .theme-toggle:hover {
+        transform: none;
+    }
+
+    .nav-link:hover {
+        transform: none;
+    }
+}

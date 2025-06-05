@@ -1,0 +1,423 @@
+/* ========================================
+   VARIABLES CSS PERSONALIZADAS
+   ======================================== */
+
+:root {
+    /* Colores principales */
+    --salvation-primary: #30426a;     /* Azul principal */
+    --salvation-secondary: #f8f9fa;   /* Fondo claro */
+    --salvation-accent: #e74c3c;      /* Rojo acento */
+    --salvation-bg-gradient: #5ac2e0; /* Azul claro para gradientes */
+    
+    /* Colores de texto */
+    --salvation-text: #333;           /* Texto principal oscuro */
+    --salvation-light-text: #f8f9fa;  /* Texto claro */
+    
+    /* Colores de fondo */
+    --salvation-card-bg: #ffffff;     /* Fondo de tarjetas */
+    --salvation-modal-bg: #ffffff;    /* Fondo de modales */
+    
+    /* Efectos visuales */
+    --salvation-shadow: rgba(0, 0, 0, 0.1);    /* Sombras suaves */
+    --salvation-border: rgba(255, 255, 255, 0.1); /* Bordes sutiles */
+}
+
+/* Variables para tema oscuro */
+[data-bs-theme="dark"] {
+    --salvation-primary: #4a5f8a;     /* Azul principal más claro */
+    --salvation-secondary: #1a1a1a;   /* Fondo oscuro */
+    --salvation-accent: #ff6b6b;      /* Rojo acento más brillante */
+    --salvation-text: #e0e0e0;        /* Texto principal claro */
+    --salvation-light-text: #ffffff;  /* Texto claro más brillante */
+    --salvation-bg-gradient: #2c5282; /* Azul oscuro para gradientes */
+    --salvation-card-bg: #2d3748;     /* Fondo de tarjetas oscuro */
+    --salvation-modal-bg: #2d3748;    /* Fondo de modales oscuro */
+    --salvation-shadow: rgba(0, 0, 0, 0.3);    /* Sombras más intensas */
+    --salvation-border: rgba(255, 255, 255, 0.2); /* Bordes más visibles */
+}
+
+/* ========================================
+   ESTILOS GENERALES DE LA PÁGINA
+   ======================================== */
+
+.salvation-page {
+    font-family: Lato, sans-serif;
+    color: var(--salvation-text);
+    background-color: var(--salvation-secondary);
+}
+
+/* Tipografía para encabezados */
+.salvation-page h1,
+.salvation-page h2,
+.salvation-page h3,
+.salvation-page h4,
+.salvation-page h5,
+.salvation-page h6 {
+    font-family: Mulish, sans-serif;
+    font-weight: 700;
+}
+
+/* ========================================
+   SECCIÓN DE INTRODUCCIÓN
+   ======================================== */
+
+.salvation-introduction {
+    min-height: 100vh; /* Altura completa de la pantalla */
+    background: linear-gradient(135deg, var(--salvation-bg-gradient) 0, var(--salvation-primary) 100%);
+    color: var(--salvation-light-text);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efecto de luz radial en el fondo */
+.salvation-introduction::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.1) 0, transparent 70%);
+    pointer-events: none; /* No interfiere con interacciones */
+}
+
+/* Título principal con tamaño responsivo */
+.gospel-main-title {
+    font-size: clamp(2rem, 5vw, 3.5rem); /* Tamaño adaptable */
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Sombra para legibilidad */
+}
+
+/* Texto principal con tamaño responsivo */
+.gospel-main-text {
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+    text-shadow: 0 1px 5px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+}
+
+/* ========================================
+   SECCIÓN PRINCIPAL DE SALVACIÓN
+   ======================================== */
+
+.salvation-section {
+    padding: 4rem 0;
+    background-color: var(--salvation-secondary);
+    transition: background-color 0.3s ease;
+}
+
+/* Contenedor para cada paso del evangelio */
+.gospel-step {
+    margin-bottom: 4rem;
+    align-items: center;
+}
+
+/* Texto de los pasos del evangelio */
+.gospel-text {
+    font-size: clamp(1.1rem, 2.2vw, 1.3rem);
+    font-weight: 600;
+    color: var(--salvation-text);
+    margin-bottom: 1rem;
+    font-family: Mulish, sans-serif;
+    transition: color 0.3s ease;
+}
+
+/* Estilo para los versículos bíblicos */
+.gospel-text-verse {
+    font-size: clamp(0.95rem, 1.8vw, 1.05rem);
+    font-style: italic;
+    color: var(--salvation-primary);
+    font-weight: 400;
+    font-family: Lato, sans-serif;
+    transition: color 0.3s ease;
+}
+
+/* ========================================
+   IMÁGENES DEL EVANGELIO
+   ======================================== */
+
+.gospel-img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px var(--salvation-shadow);
+    transition: all 0.3s ease;
+    filter: brightness(1);
+}
+
+/* Ajuste de brillo para imágenes en tema oscuro */
+[data-bs-theme="dark"] .gospel-img {
+    filter: brightness(0.9) contrast(1.1);
+}
+
+/* Efecto hover en imágenes */
+.gospel-img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 40px var(--salvation-shadow);
+}
+
+/* ========================================
+   TARJETAS Y COMPONENTES
+   ======================================== */
+
+/* Tarjeta de salvación */
+.salvation-card {
+    background-color: var(--salvation-card-bg);
+    border: 1px solid var(--salvation-border);
+    box-shadow: 0 10px 30px var(--salvation-shadow);
+    transition: all 0.3s ease;
+}
+
+/* Título de la tarjeta */
+.salvation-card .card-title {
+    color: var(--salvation-primary);
+    transition: color 0.3s ease;
+}
+
+/* Texto de la tarjeta */
+.salvation-card .card-text {
+    color: var(--salvation-text);
+    transition: color 0.3s ease;
+}
+
+/* ========================================
+   BOTONES Y ELEMENTOS INTERACTIVOS
+   ======================================== */
+
+/* Botón primario con gradiente */
+.salvation-btn-primary {
+    background: linear-gradient(45deg, var(--salvation-primary), var(--salvation-bg-gradient));
+    border: none;
+    padding: 0.75rem 2rem;
+    border-radius: 25px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    color: var(--salvation-light-text);
+    text-decoration: none;
+    display: inline-block;
+}
+
+/* Efecto hover en botón primario */
+.salvation-btn-primary:hover {
+    transform: translateY(-2px); /* Efecto de elevación */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(45deg, var(--salvation-accent), var(--salvation-primary));
+    color: var(--salvation-light-text);
+}
+
+/* Botón de oración */
+.prayer-button {
+    background: var(--salvation-primary);
+    color: var(--salvation-light-text);
+    border: 2px solid var(--salvation-primary);
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+/* Efecto hover en botón de oración */
+.prayer-button:hover {
+    background: var(--salvation-accent);
+    border-color: var(--salvation-accent);
+    color: var(--salvation-light-text);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px var(--salvation-shadow);
+}
+
+/* ========================================
+   ESTILOS DEL MODAL DE ORACIÓN
+   ======================================== */
+
+/* Contenido del modal */
+.salvation-modal .modal-content {
+    background-color: var(--salvation-modal-bg);
+    border: 1px solid var(--salvation-border);
+    border-radius: 15px;
+    box-shadow: 0 20px 60px var(--salvation-shadow);
+}
+
+/* Encabezado del modal con gradiente */
+.salvation-modal .modal-header {
+    background: linear-gradient(45deg, var(--salvation-primary), var(--salvation-bg-gradient));
+    color: var(--salvation-light-text);
+    border-bottom: none;
+    border-radius: 15px 15px 0 0;
+}
+
+/* Título del modal */
+.salvation-modal .modal-title {
+    font-family: Mulish, sans-serif;
+    font-weight: 600;
+}
+
+/* Cuerpo del modal */
+.salvation-modal .modal-body {
+    color: var(--salvation-text);
+    line-height: 1.7;
+    padding: 2rem;
+}
+
+/* Pie del modal */
+.salvation-modal .modal-footer {
+    border-top: 1px solid var(--salvation-border);
+    background-color: var(--salvation-modal-bg);
+    border-radius: 0 0 15px 15px;
+}
+
+/* Botón de cierre del modal */
+.salvation-modal .btn-close {
+    filter: invert(1); /* Invertir color para visibilidad */
+}
+
+/* ========================================
+   ANIMACIONES
+   ======================================== */
+
+/* Botón de continuar con animación de rebote */
+.continue-btn {
+    animation: bounce 2s infinite;
+}
+
+/* Keyframes para la animación de rebote */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+/* ========================================
+   ESTILOS RESPONSIVOS - MÓVIL
+   ======================================== */
+
+@media (max-width: 768px) {
+    /* Ajustes para la sección de introducción */
+    .salvation-introduction {
+        padding: 1rem;
+        min-height: 100vh;
+    }
+
+    /* Ajustes para la sección principal */
+    .salvation-section {
+        padding: 0;
+    }
+
+    /* Convertir cada paso en una sección de altura completa */
+    .gospel-step {
+        margin-bottom: 0;
+        text-align: center;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 2rem 1rem;
+    }
+
+    /* Reordenar elementos para móvil */
+    .flip-img-order {
+        order: 2; /* Imagen después del texto */
+        margin-top: 2rem;
+        flex: 0 0 auto;
+    }
+
+    .flip-text-order {
+        order: 1; /* Texto antes de la imagen */
+        text-align: center !important;
+        flex: 0 0 auto;
+    }
+
+    /* Ajustar tamaño de imágenes */
+    .gospel-img {
+        max-width: 280px;
+        margin: 0 auto;
+    }
+
+    /* Ajustar padding en tarjetas */
+    .salvation-card .card-body {
+        padding: 2rem 1rem !important;
+    }
+
+    /* Centrar textos */
+    .gospel-text,
+    .gospel-text-verse {
+        text-align: center !important;
+    }
+
+    /* Ajustar última sección */
+    .salvation-section > .container > .row:last-child {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        padding: 2rem 0;
+    }
+}
+
+/* ========================================
+   ESTILOS RESPONSIVOS - MÓVILES PEQUEÑOS
+   ======================================== */
+
+@media (max-width: 576px) {
+    /* Imágenes más pequeñas */
+    .gospel-img {
+        max-width: 200px;
+    }
+
+    /* Ajustes para el modal */
+    .salvation-modal .modal-dialog {
+        margin: 1rem;
+    }
+
+    .salvation-modal .modal-body {
+        font-size: 0.9rem;
+        padding: 1.5rem;
+    }
+}
+
+/* ========================================
+   ESTILOS RESPONSIVOS - ESCRITORIO
+   ======================================== */
+
+@media (min-width: 769px) {
+    /* Alineación de texto para pasos impares */
+    .gospel-text-1,
+    .gospel-text-3,
+    .gospel-text-5 {
+        text-align: right;
+    }
+
+    /* Alineación de texto para pasos pares */
+    .gospel-text-2,
+    .gospel-text-4,
+    .gospel-text-6 {
+        text-align: left;
+    }
+}
+
+/* ========================================
+   TRANSICIONES SUAVES PARA CAMBIO DE TEMA
+   ======================================== */
+
+.salvation-card *,
+.salvation-introduction *,
+.salvation-modal *,
+.salvation-page *,
+.salvation-section * {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
