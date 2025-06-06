@@ -4,8 +4,8 @@
 
 :root {
     /* Colores de fondo para temas claro y oscuro */
-    --ministerios-bg-light: #f8fafc;
-    --ministerios-bg-dark: #0f172a;
+    --ministerios-bg-light: #ffffff;
+    --ministerios-bg-dark: #121212;
     
     /* Colores de texto para temas claro y oscuro */
     --ministerios-text-light: #334155;
@@ -38,9 +38,9 @@
     --glass-border-dark: rgba(255, 255, 255, 0.1);
     
     /* Colores de acento para gradientes */
-    --primary-accent: #00c0f6;
-    --secondary-accent: #667eea;
-    --tertiary-accent: #764ba2;
+    --primary-accent: #ffc108;
+    --secondary-accent: #5c6bc0;
+    --tertiary-accent: #8e24aa;
     
     /* Espaciados responsivos usando clamp() */
     --section-spacing: clamp(40px, 8vw, 80px);
@@ -277,6 +277,18 @@
     background-image: url('../assets/images/lideres/Lideres_Intermedios.png');
 }
 
+.ministerios-profile-card:nth-child(7) .ministerios-card-banner {
+    background-image: url('../assets/images/lideres/Lideres_CultoInfantil.png');
+}
+
+.ministerios-profile-card:nth-child(8) .ministerios-card-banner {
+    background-image: url('../assets/images/lideres/Lideres_Parvulos.png');
+}
+
+.ministerios-profile-card:nth-child(9) .ministerios-card-banner {
+    background-image: url('../assets/images/lideres/Lideres_Jovenes.png');
+}
+
 /* Overlay oscuro sobre los banners */
 .ministerios-banner-overlay {
     position: absolute;
@@ -354,6 +366,18 @@
 
 .ministerios-profile-card:nth-child(6) .ministerios-profile-avatar {
     background-image: url('../assets/images/logos/Logo_Intermedios_90.png');
+}
+
+.ministerios-profile-card:nth-child(7) .ministerios-profile-avatar {
+    background-image: url('../assets/images/logos/Logo_CultoInfantil_90.png');
+}
+
+.ministerios-profile-card:nth-child(8) .ministerios-profile-avatar {
+    background-image: url('../assets/images/logos/Logo_CultoInfantil_90.png');
+}
+
+.ministerios-profile-card:nth-child(9) .ministerios-profile-avatar {
+    background-image: url('../assets/images/logos/Logo_CultoInfantil_90.png');
 }
 
 /* ========================================
